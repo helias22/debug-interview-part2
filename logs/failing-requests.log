@@ -1,0 +1,10 @@
+[2026-03-11 09:02:14] [notifications] Processing SMS for task_id=1823 user_id=312 org_id=47
+[2026-03-11 09:02:14] [notifications] Looking up phone number for user 312
+[2026-03-11 09:02:14] [notifications] No phone number found for user 312, skipping SMS
+[2026-03-11 09:02:14] [notifications] Processing SMS for task_id=1824 user_id=313 org_id=47
+[2026-03-11 09:02:14] [notifications] Looking up phone number for user 313
+[2026-03-11 09:02:14] [notifications] No phone number found for user 313, skipping SMS
+[2026-03-11 09:02:15] [notifications] Processing SMS for task_id=1825 user_id=314 org_id=47
+[2026-03-11 09:02:15] [notifications] Looking up phone number for user 314
+[2026-03-11 09:02:15] [notifications] No phone number found for user 314, skipping SMS
+[2026-03-11 09:02:15] [notifications] SMS batch complete: 0/3 sent
