@@ -1,28 +1,27 @@
 # Part 2: Production Investigation
 
-You're on-call and this alert just came in. Investigate the issue — figure out **what** is failing, **why** it's failing, and **why now** (it was working before).
+## Scenario
 
-You have access to everything below. Take your time, talk through your thinking.
-
----
-
-## The Alert
-
-> **#eng-alerts** — 2026-03-11 9:14 AM
->
-> 🔴 **Alert: SMS notification failures spiking**
->
-> We're seeing a spike in failed SMS notifications since yesterday.
-> Affected org: Meridian Insurance (org_id: 47).
-> All their task assignment notifications are failing — assignees aren't getting SMS alerts.
->
-> Other orgs seem fine. Meridian was onboarded yesterday.
+You are on-call for **TaskFlow**, a task management SaaS platform. The following PagerDuty alert fired this morning:
 
 ---
 
-Start by looking at any of the files in this project:
+**ALERT: Notification delivery failures spiking**
+- Severity: P2
+- Service: notification-router
+- Impact: Multiple users across at least one organization are not receiving all expected notifications when tasks are assigned to them
+- Started: ~2025-03-24
+- Note: Email and Slack channels appear healthy. Not all orgs are affected.
 
-- `logs/` — server logs from the failing and working requests
-- `code/` — the relevant code that sends notifications
-- `db/` — snapshots of the relevant database tables
-- `git/` — recent git history and PR descriptions
+---
+
+## Your Task
+
+Investigate the root cause of the notification failures. You have access to:
+
+- `code/` — the notification system source code
+- `logs/app.log` — recent application logs
+- `db/` — current database snapshots (markdown tables)
+- `git/` — recent git history and relevant diffs
+
+**Deliverable:** Identify the root cause, explain why it only affects certain users, and propose a fix.

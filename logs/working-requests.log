@@ -1,9 +1,0 @@
-[2026-03-11 08:45:02] [notifications] Processing SMS for task_id=1801 user_id=204 org_id=12
-[2026-03-11 08:45:02] [notifications] Looking up phone number for user 204
-[2026-03-11 08:45:02] [notifications] Sending SMS to +1555XXXX32 for user 204
-[2026-03-11 08:45:03] [notifications] SMS sent successfully to user 204
-[2026-03-11 08:45:03] [notifications] Processing SMS for task_id=1802 user_id=205 org_id=12
-[2026-03-11 08:45:03] [notifications] Looking up phone number for user 205
-[2026-03-11 08:45:03] [notifications] Sending SMS to +1555XXXX33 for user 205
-[2026-03-11 08:45:04] [notifications] SMS sent successfully to user 205
-[2026-03-11 08:45:04] [notifications] SMS batch complete: 2/2 sent
