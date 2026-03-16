@@ -34,10 +34,15 @@ const sendNotification = async (organizationId, userId, { smsBody, emailSubject,
   const userContacts = await getUserContacts(userId);
   const userChannels = userContacts.map((c) => CONTACT_TYPE_TO_CHANNEL[c.contactType]).filter(Boolean);
 
-  // Only dispatch to channels the org has enabled AND the user has a contact for
+  // If user has contacts in user_contacts, only dispatch to those channels
+  // Otherwise fall back to all org-enabled channels (legacy users not yet migrated)
   const channels = {};
-  for (const channel of Object.keys(orgChannels)) {
-    channels[channel] = orgChannels[channel] && userChannels.includes(channel);
+  if (userChannels.length > 0) {
+    for (const channel of Object.keys(orgChannels)) {
+      channels[channel] = orgChannels[channel] && userChannels.includes(channel);
+    }
+  } else {
+    Object.assign(channels, orgChannels);
   }
 
   log.info('Routing notification', { organizationId, userId, channels });
