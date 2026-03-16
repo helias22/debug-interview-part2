@@ -7,41 +7,33 @@
 2024-03-25T08:02:45.198Z [INFO] [task-repo] Task updated taskId="2018" organizationId="2" fields=["assigneeId"]
 2024-03-25T08:02:45.201Z [INFO] [tasks-route] Task reassigned, triggering notifications taskId="2018"
 2024-03-25T08:02:45.203Z [INFO] [task-events] Task assigned, sending notifications taskId="2018" assigneeId="202" organizationId="2"
-2024-03-25T08:02:45.210Z [INFO] [notification-router] Routing notification organizationId="2" userId="202" channels={"sms":true,"email":true,"slack":true}
-2024-03-25T08:02:45.212Z [INFO] [notification-router] Dispatching to 3 channel(s) organizationId="2" userId="202"
+2024-03-25T08:02:45.210Z [INFO] [notification-router] Routing notification organizationId="2" userId="202" channels={"sms":true,"email":true,"slack":false}
+2024-03-25T08:02:45.212Z [INFO] [notification-router] Dispatching to 2 channel(s) organizationId="2" userId="202"
 2024-03-25T08:02:45.250Z [INFO] [sms-service] Sending SMS notification userId="202" phone="+12*****02"
 2024-03-25T08:02:45.410Z [INFO] [sms-service] SMS sent successfully userId="202" phone="+12*****02"
 2024-03-25T08:02:45.320Z [INFO] [email-service] Sending email notification userId="202" email="m***m@bayside.com"
 2024-03-25T08:02:45.480Z [INFO] [email-service] Email sent successfully userId="202" to="m***m@bayside.com"
-2024-03-25T08:02:45.330Z [INFO] [slack-service] Sending Slack notification userId="202" slackId="U04B2MKIM"
-2024-03-25T08:02:45.495Z [INFO] [slack-service] Slack notification sent userId="202" slackId="U04B2MKIM"
-2024-03-25T08:02:45.500Z [INFO] [task-events] Task assignment notifications dispatched taskId="2018" channelsSent=3 totalChannels=3
+2024-03-25T08:02:45.500Z [INFO] [task-events] Task assignment notifications dispatched taskId="2018" channelsSent=2 totalChannels=2
 2024-03-25T08:04:10.880Z [INFO] [auth] Request authenticated userId="102"
 2024-03-25T08:04:10.882Z [INFO] [org-context] Org context set orgSlug="redwood" organizationId="1"
 2024-03-25T08:04:10.920Z [INFO] [task-repo] Task updated taskId="1041" organizationId="1" fields=["status"]
 2024-03-25T08:04:10.925Z [INFO] [task-events] Task status changed taskId="1041" from="open" to="in_progress"
-2024-03-25T08:04:10.930Z [INFO] [notification-router] Routing notification organizationId="1" userId="103" channels={"sms":true,"email":true,"slack":true}
-2024-03-25T08:04:10.935Z [INFO] [notification-router] Dispatching to 3 channel(s) organizationId="1" userId="103"
+2024-03-25T08:04:10.930Z [INFO] [notification-router] Routing notification organizationId="1" userId="103" channels={"sms":true,"email":true,"slack":false}
+2024-03-25T08:04:10.935Z [INFO] [notification-router] Dispatching to 2 channel(s) organizationId="1" userId="103"
 2024-03-25T08:04:11.010Z [INFO] [sms-service] Sending SMS notification userId="103" phone="+14*****03"
 2024-03-25T08:04:11.180Z [INFO] [sms-service] SMS sent successfully userId="103" phone="+14*****03"
 2024-03-25T08:04:11.050Z [INFO] [email-service] Sending email notification userId="103" email="r****l@redwood.com"
 2024-03-25T08:04:11.200Z [INFO] [email-service] Email sent successfully userId="103" to="r****l@redwood.com"
-2024-03-25T08:04:11.060Z [INFO] [slack-service] Sending Slack notification userId="103" slackId="U04A3RAVI"
-2024-03-25T08:04:11.210Z [INFO] [slack-service] Slack notification sent userId="103" slackId="U04A3RAVI"
 2024-03-25T08:06:33.112Z [INFO] [billing] Usage tracked organizationId="3" metricType="task_created" quantity=1
 2024-03-25T08:07:01.440Z [INFO] [auth] Request authenticated userId="301"
 2024-03-25T08:07:01.442Z [INFO] [org-context] Org context set orgSlug="meridian" organizationId="3"
 2024-03-25T08:07:01.510Z [INFO] [task-repo] Task updated taskId="3022" organizationId="3" fields=["assigneeId"]
 2024-03-25T08:07:01.513Z [INFO] [tasks-route] Task reassigned, triggering notifications taskId="3022"
 2024-03-25T08:07:01.515Z [INFO] [task-events] Task assigned, sending notifications taskId="3022" assigneeId="302" organizationId="3"
-2024-03-25T08:07:01.520Z [INFO] [notification-router] Routing notification organizationId="3" userId="302" channels={"sms":true,"email":true,"slack":true}
-2024-03-25T08:07:01.522Z [INFO] [notification-router] Dispatching to 3 channel(s) organizationId="3" userId="302"
+2024-03-25T08:07:01.520Z [INFO] [notification-router] Routing notification organizationId="3" userId="302" channels={"sms":true,"email":false,"slack":false}
+2024-03-25T08:07:01.522Z [INFO] [notification-router] Dispatching to 1 channel(s) organizationId="3" userId="302"
 2024-03-25T08:07:01.560Z [WARN] [sms-service] No phone number found for user, skipping SMS userId="302" userName="Emily Zhang"
-2024-03-25T08:07:01.580Z [INFO] [email-service] Sending email notification userId="302" email="e****g@meridian.com"
-2024-03-25T08:07:01.700Z [INFO] [email-service] Email sent successfully userId="302" to="e****g@meridian.com"
-2024-03-25T08:07:01.590Z [INFO] [slack-service] Sending Slack notification userId="302" slackId="U04M2EMILY"
-2024-03-25T08:07:01.720Z [INFO] [slack-service] Slack notification sent userId="302" slackId="U04M2EMILY"
-2024-03-25T08:07:01.725Z [INFO] [task-events] Task assignment notifications dispatched taskId="3022" channelsSent=2 totalChannels=3
+2024-03-25T08:07:01.565Z [INFO] [task-events] Task assignment notifications dispatched taskId="3022" channelsSent=0 totalChannels=1
 2024-03-25T08:09:15.330Z [INFO] [auth] Request authenticated userId="401"
 2024-03-25T08:09:15.332Z [INFO] [org-context] Org context set orgSlug="coastline" organizationId="4"
 2024-03-25T08:09:15.400Z [INFO] [tasks-route] Task created via API taskId="4005"
@@ -51,12 +43,11 @@
 2024-03-25T08:11:42.270Z [INFO] [task-repo] Task updated taskId="3023" organizationId="3" fields=["assigneeId"]
 2024-03-25T08:11:42.273Z [INFO] [tasks-route] Task reassigned, triggering notifications taskId="3023"
 2024-03-25T08:11:42.275Z [INFO] [task-events] Task assigned, sending notifications taskId="3023" assigneeId="303" organizationId="3"
-2024-03-25T08:11:42.280Z [INFO] [notification-router] Routing notification organizationId="3" userId="303" channels={"sms":true,"email":true,"slack":true}
-2024-03-25T08:11:42.282Z [INFO] [notification-router] Dispatching to 3 channel(s) organizationId="3" userId="303"
-2024-03-25T08:11:42.320Z [WARN] [sms-service] No phone number found for user, skipping SMS userId="303" userName="Brian Torres"
+2024-03-25T08:11:42.280Z [INFO] [notification-router] Routing notification organizationId="3" userId="303" channels={"sms":false,"email":true,"slack":false}
+2024-03-25T08:11:42.282Z [INFO] [notification-router] Dispatching to 1 channel(s) organizationId="3" userId="303"
 2024-03-25T08:11:42.340Z [INFO] [email-service] Sending email notification userId="303" email="b*****s@meridian.com"
 2024-03-25T08:11:42.460Z [INFO] [email-service] Email sent successfully userId="303" to="b*****s@meridian.com"
-2024-03-25T08:11:42.465Z [INFO] [task-events] Task assignment notifications dispatched taskId="3023" channelsSent=1 totalChannels=2
+2024-03-25T08:11:42.465Z [INFO] [task-events] Task assignment notifications dispatched taskId="3023" channelsSent=1 totalChannels=1
 2024-03-25T08:14:05.100Z [INFO] [billing] Usage tracked organizationId="1" metricType="notification_sms" quantity=1
 2024-03-25T08:14:05.102Z [INFO] [billing] Usage tracked organizationId="1" metricType="notification_email" quantity=1
 2024-03-25T08:15:30.440Z [INFO] [auth] Request authenticated userId="101"
@@ -64,34 +55,30 @@
 2024-03-25T08:15:30.510Z [INFO] [task-repo] Task updated taskId="1041" organizationId="1" fields=["assigneeId"]
 2024-03-25T08:15:30.513Z [INFO] [tasks-route] Task reassigned, triggering notifications taskId="1041"
 2024-03-25T08:15:30.515Z [INFO] [task-events] Task assigned, sending notifications taskId="1041" assigneeId="101" organizationId="1"
-2024-03-25T08:15:30.520Z [INFO] [notification-router] Routing notification organizationId="1" userId="101" channels={"sms":true,"email":true,"slack":true}
-2024-03-25T08:15:30.522Z [INFO] [notification-router] Dispatching to 3 channel(s) organizationId="1" userId="101"
+2024-03-25T08:15:30.520Z [INFO] [notification-router] Routing notification organizationId="1" userId="101" channels={"sms":true,"email":true,"slack":false}
+2024-03-25T08:15:30.522Z [INFO] [notification-router] Dispatching to 2 channel(s) organizationId="1" userId="101"
 2024-03-25T08:15:30.560Z [INFO] [sms-service] Sending SMS notification userId="101" phone="+14*****01"
 2024-03-25T08:15:30.720Z [INFO] [sms-service] SMS sent successfully userId="101" phone="+14*****01"
 2024-03-25T08:15:30.580Z [INFO] [email-service] Sending email notification userId="101" email="l*****n@redwood.com"
 2024-03-25T08:15:30.740Z [INFO] [email-service] Email sent successfully userId="101" to="l*****n@redwood.com"
-2024-03-25T08:15:30.590Z [INFO] [slack-service] Sending Slack notification userId="101" slackId="U04A1MARTIN"
-2024-03-25T08:15:30.750Z [INFO] [slack-service] Slack notification sent userId="101" slackId="U04A1MARTIN"
-2024-03-25T08:15:30.755Z [INFO] [task-events] Task assignment notifications dispatched taskId="1041" channelsSent=3 totalChannels=3
+2024-03-25T08:15:30.755Z [INFO] [task-events] Task assignment notifications dispatched taskId="1041" channelsSent=2 totalChannels=2
 2024-03-25T08:18:22.660Z [INFO] [auth] Request authenticated userId="301"
 2024-03-25T08:18:22.662Z [INFO] [org-context] Org context set orgSlug="meridian" organizationId="3"
 2024-03-25T08:18:22.730Z [INFO] [task-repo] Task updated taskId="3024" organizationId="3" fields=["assigneeId"]
 2024-03-25T08:18:22.733Z [INFO] [tasks-route] Task reassigned, triggering notifications taskId="3024"
 2024-03-25T08:18:22.735Z [INFO] [task-events] Task assigned, sending notifications taskId="3024" assigneeId="304" organizationId="3"
-2024-03-25T08:18:22.740Z [INFO] [notification-router] Routing notification organizationId="3" userId="304" channels={"sms":true,"email":true,"slack":true}
-2024-03-25T08:18:22.742Z [INFO] [notification-router] Dispatching to 3 channel(s) organizationId="3" userId="304"
+2024-03-25T08:18:22.740Z [INFO] [notification-router] Routing notification organizationId="3" userId="304" channels={"sms":true,"email":false,"slack":false}
+2024-03-25T08:18:22.742Z [INFO] [notification-router] Dispatching to 1 channel(s) organizationId="3" userId="304"
 2024-03-25T08:18:22.780Z [WARN] [sms-service] No phone number found for user, skipping SMS userId="304" userName="Jenny Liu"
-2024-03-25T08:18:22.800Z [INFO] [email-service] Sending email notification userId="304" email="j**u@meridian.com"
-2024-03-25T08:18:22.920Z [INFO] [email-service] Email sent successfully userId="304" to="j**u@meridian.com"
-2024-03-25T08:18:22.925Z [INFO] [task-events] Task assignment notifications dispatched taskId="3024" channelsSent=1 totalChannels=2
-2024-03-25T08:20:44.110Z [INFO] [billing] Usage tracked organizationId="3" metricType="notification_email" quantity=3
-2024-03-25T08:20:44.115Z [INFO] [billing] Usage tracked organizationId="3" metricType="notification_sms" quantity=1
+2024-03-25T08:18:22.785Z [INFO] [task-events] Task assignment notifications dispatched taskId="3024" channelsSent=0 totalChannels=1
+2024-03-25T08:20:44.110Z [INFO] [billing] Usage tracked organizationId="3" metricType="notification_email" quantity=1
+2024-03-25T08:20:44.115Z [INFO] [billing] Usage tracked organizationId="3" metricType="notification_sms" quantity=0
 2024-03-25T08:22:10.330Z [INFO] [auth] Request authenticated userId="201"
 2024-03-25T08:22:10.332Z [INFO] [org-context] Org context set orgSlug="bayside" organizationId="2"
 2024-03-25T08:22:10.400Z [INFO] [task-repo] Task updated taskId="2019" organizationId="2" fields=["status"]
 2024-03-25T08:22:10.405Z [INFO] [task-events] Task status changed taskId="2019" from="open" to="completed"
-2024-03-25T08:22:10.410Z [INFO] [notification-router] Routing notification organizationId="2" userId="203" channels={"sms":true,"email":true,"slack":true}
-2024-03-25T08:22:10.412Z [INFO] [notification-router] Dispatching to 3 channel(s) organizationId="2" userId="203"
+2024-03-25T08:22:10.410Z [INFO] [notification-router] Routing notification organizationId="2" userId="203" channels={"sms":true,"email":true,"slack":false}
+2024-03-25T08:22:10.412Z [INFO] [notification-router] Dispatching to 2 channel(s) organizationId="2" userId="203"
 2024-03-25T08:22:10.450Z [INFO] [sms-service] Sending SMS notification userId="203" phone="+12*****03"
 2024-03-25T08:22:10.610Z [INFO] [sms-service] SMS sent successfully userId="203" phone="+12*****03"
 2024-03-25T08:22:10.470Z [INFO] [email-service] Sending email notification userId="203" email="a*****a@bayside.com"
@@ -102,25 +89,20 @@
 2024-03-25T08:25:00.290Z [INFO] [task-repo] Task updated taskId="3025" organizationId="3" fields=["assigneeId"]
 2024-03-25T08:25:00.293Z [INFO] [tasks-route] Task reassigned, triggering notifications taskId="3025"
 2024-03-25T08:25:00.295Z [INFO] [task-events] Task assigned, sending notifications taskId="3025" assigneeId="305" organizationId="3"
-2024-03-25T08:25:00.300Z [INFO] [notification-router] Routing notification organizationId="3" userId="305" channels={"sms":true,"email":true,"slack":true}
-2024-03-25T08:25:00.302Z [INFO] [notification-router] Dispatching to 3 channel(s) organizationId="3" userId="305"
-2024-03-25T08:25:00.340Z [WARN] [sms-service] No phone number found for user, skipping SMS userId="305" userName="Carlos Ruiz"
+2024-03-25T08:25:00.300Z [INFO] [notification-router] Routing notification organizationId="3" userId="305" channels={"sms":false,"email":true,"slack":false}
+2024-03-25T08:25:00.302Z [INFO] [notification-router] Dispatching to 1 channel(s) organizationId="3" userId="305"
 2024-03-25T08:25:00.360Z [INFO] [email-service] Sending email notification userId="305" email="c***z@meridian.com"
 2024-03-25T08:25:00.480Z [INFO] [email-service] Email sent successfully userId="305" to="c***z@meridian.com"
-2024-03-25T08:25:00.485Z [INFO] [task-events] Task assignment notifications dispatched taskId="3025" channelsSent=1 totalChannels=2
+2024-03-25T08:25:00.485Z [INFO] [task-events] Task assignment notifications dispatched taskId="3025" channelsSent=1 totalChannels=1
 2024-03-25T08:27:33.770Z [INFO] [billing] Usage tracked organizationId="2" metricType="api_call" quantity=14
 2024-03-25T08:27:33.775Z [INFO] [billing] Usage tracked organizationId="1" metricType="api_call" quantity=22
 2024-03-25T08:28:01.100Z [INFO] [auth] Request authenticated userId="301"
 2024-03-25T08:28:01.102Z [INFO] [org-context] Org context set orgSlug="meridian" organizationId="3"
 2024-03-25T08:28:01.170Z [INFO] [task-repo] Task updated taskId="3022" organizationId="3" fields=["status"]
 2024-03-25T08:28:01.175Z [INFO] [task-events] Task status changed taskId="3022" from="open" to="in_progress"
-2024-03-25T08:28:01.180Z [INFO] [notification-router] Routing notification organizationId="3" userId="302" channels={"sms":true,"email":true,"slack":true}
-2024-03-25T08:28:01.182Z [INFO] [notification-router] Dispatching to 3 channel(s) organizationId="3" userId="302"
+2024-03-25T08:28:01.180Z [INFO] [notification-router] Routing notification organizationId="3" userId="302" channels={"sms":true,"email":false,"slack":false}
+2024-03-25T08:28:01.182Z [INFO] [notification-router] Dispatching to 1 channel(s) organizationId="3" userId="302"
 2024-03-25T08:28:01.220Z [WARN] [sms-service] No phone number found for user, skipping SMS userId="302" userName="Emily Zhang"
-2024-03-25T08:28:01.240Z [INFO] [email-service] Sending email notification userId="302" email="e****g@meridian.com"
-2024-03-25T08:28:01.360Z [INFO] [email-service] Email sent successfully userId="302" to="e****g@meridian.com"
-2024-03-25T08:28:01.370Z [INFO] [slack-service] Sending Slack notification userId="302" slackId="U04M2EMILY"
-2024-03-25T08:28:01.490Z [INFO] [slack-service] Slack notification sent userId="302" slackId="U04M2EMILY"
-2024-03-25T08:28:01.495Z [INFO] [task-events] Task assignment notifications dispatched taskId="3022" channelsSent=2 totalChannels=3
+2024-03-25T08:28:01.225Z [INFO] [task-events] Task assignment notifications dispatched taskId="3022" channelsSent=0 totalChannels=1
 2024-03-25T08:30:15.880Z [INFO] [billing] Usage tracked organizationId="3" metricType="api_call" quantity=18
 2024-03-25T08:31:45.200Z [WARN] [rate-limiter] Rate limit exceeded ip="203.0.113.42" key="203.0.113.42:4"

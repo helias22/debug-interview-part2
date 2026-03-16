@@ -5,10 +5,11 @@ commit 1f7b9d4
 Author: James Chen <jchen@taskflow.io>
 Date:   Tue Mar 18 10:33:08 2025
 
-    feat: add user_contacts table for multiple contact types
+    feat: migrate notification routing to user_contacts table
 
-    - Created user_contacts table to support multiple contact types
-    - New user creation now writes to user_contacts instead of users.phone_number
+    - Created user_contacts table to support flexible contact preferences
+    - Notification router now checks user_contacts to determine which channels to dispatch to
+    - Updated email service to read from contacts-repo instead of user-repo
     - NOTE: kept users.phone_number column for backwards compat, will remove in follow-up PR
 
 diff --git a/migrations/0042_create-user-contacts-table.sql b/migrations/0042_create-user-contacts-table.sql
@@ -33,7 +34,7 @@ diff --git a/code/repositories/contacts-repo.js b/code/repositories/contacts-rep
 new file mode 100644
 --- /dev/null
 +++ b/code/repositories/contacts-repo.js
-@@ -0,0 +1,55 @@
+@@ -0,0 +1,65 @@
 +const { eq, and } = require('drizzle-orm');
 +const { db } = require('../db');
 +const { userContacts } = require('../schema');
@@ -44,6 +45,40 @@ new file mode 100644
 +const getUserContact = async (userId, contactType) => {
 +...
 +(full file as shown in contacts-repo.js)
+
+diff --git a/code/services/notification-router.js b/code/services/notification-router.js
+--- a/code/services/notification-router.js
++++ b/code/services/notification-router.js
+@@ -1,5 +1,7 @@
+ const { getChannelsForOrg } = require('../config/notification-config');
++const { getUserContacts } = require('../repositories/contacts-repo');
+ const { notifyUserBySms } = require('./sms');
+ const { notifyUserByEmail } = require('./email');
+ const { notifyUserBySlack } = require('./slack');
+
++const CONTACT_TYPE_TO_CHANNEL = {
++  phone: 'sms',
++  email: 'email',
++  slack: 'slack',
++};
++
+@@ -22,8 +30,16 @@
+ const sendNotification = async (organizationId, userId, { smsBody, emailSubject, emailHtml, slackMessage }) => {
+-  const channels = await getChannelsForOrg(organizationId);
+-  log.info('Routing notification', { organizationId, userId, channels });
++  const orgChannels = await getChannelsForOrg(organizationId);
++
++  // Look up what contact methods this user actually has
++  const userContacts = await getUserContacts(userId);
++  const userChannels = userContacts.map((c) => CONTACT_TYPE_TO_CHANNEL[c.contactType]).filter(Boolean);
++
++  // Only dispatch to channels the org has enabled AND the user has a contact for
++  const channels = {};
++  for (const channel of Object.keys(orgChannels)) {
++    channels[channel] = orgChannels[channel] && userChannels.includes(channel);
++  }
++
++  log.info('Routing notification', { organizationId, userId, channels });
 
 diff --git a/code/services/email.js b/code/services/email.js
 --- a/code/services/email.js

@@ -35,10 +35,11 @@ commit 1f7b9d4
 Author: James Chen <jchen@taskflow.io>
 Date:   Tue Mar 18 10:33:08 2025
 
-    feat: add user_contacts table for multiple contact types
+    feat: migrate notification routing to user_contacts table
 
-    - Created user_contacts table to support multiple contact types
-    - New user creation now writes to user_contacts instead of users.phone_number
+    - Created user_contacts table to support flexible contact preferences
+    - Notification router now checks user_contacts to determine which channels to dispatch to
+    - Updated email service to read from contacts-repo instead of user-repo
     - NOTE: kept users.phone_number column for backwards compat, will remove in follow-up PR
 
 commit 5c2a8f1

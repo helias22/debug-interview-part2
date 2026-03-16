@@ -56,4 +56,11 @@ const upsertContact = async (userId, contactType, contactValue, isPrimary = fals
   return created;
 };
 
-module.exports = { getUserContact, getPrimaryContact, upsertContact };
+const getUserContacts = async (userId) => {
+  return db
+    .select()
+    .from(userContacts)
+    .where(eq(userContacts.userId, userId));
+};
+
+module.exports = { getUserContact, getUserContacts, getPrimaryContact, upsertContact };
